@@ -21,4 +21,4 @@ int main(void)
 	printf("Yifan\n");
 	
 	return 0;
-}
+}  
