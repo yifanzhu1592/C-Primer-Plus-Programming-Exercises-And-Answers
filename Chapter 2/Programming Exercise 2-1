@@ -18,7 +18,7 @@ int main(void)
 	printf("Zhu Yifan\n");
 	printf("Zhu\nYifan\n");
 	printf("Zhu ");
-	printf("Yifan");
+	printf("Yifan\n");
 	
 	return 0;
 }
