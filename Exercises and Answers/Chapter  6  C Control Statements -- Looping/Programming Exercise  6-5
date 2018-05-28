@@ -1,4 +1,4 @@
-/* Programming Exercise */
+/* Programming Exercise 6-5 */
 
 // Have a program request the user to enter an uppercase letter. Use nested loops to produce
 // a pyramid pattern like this:
