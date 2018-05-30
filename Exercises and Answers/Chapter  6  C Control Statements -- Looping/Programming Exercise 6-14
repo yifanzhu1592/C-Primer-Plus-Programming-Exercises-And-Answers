@@ -27,12 +27,8 @@ int main(void)
 		scanf("%lf", &fa[i]);
 	
 	sa[0] = fa[0];
-	i = 1;
-	while (i < SIZE)
-	{
+	for (i = 1;i < SIZE; i++)
 		sa[i] = fa[i] + sa[i - 1];
-		i++;
-	}
 	
 	for (i = 0; i < SIZE; i++)
 		printf("%5.2lf ", fa[i]);
