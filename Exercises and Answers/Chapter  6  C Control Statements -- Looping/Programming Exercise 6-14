@@ -31,10 +31,10 @@ int main(void)
 		sa[i] = fa[i] + sa[i - 1];
 	
 	for (i = 0; i < SIZE; i++)
-		printf("%5.2lf ", fa[i]);
+		printf("%8g ", fa[i]);
 	printf("\n");
 	for (i = 0; i < SIZE; i++)
-		printf("%5.2lf ", sa[i]);
+		printf("%8g ", sa[i]);
 	printf("\n");
 		
 	return 0;
