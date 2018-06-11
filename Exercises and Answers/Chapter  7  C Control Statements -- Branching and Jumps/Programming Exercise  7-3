@@ -1,0 +1,42 @@
+/* Programming Exercise 7-3 */
+
+// Write a program that reads integers until 0 is entered. After input terminates, the
+// program should report the total number of even integers (excluding the 0) entered, the
+// average value of the even integers, the total number of odd integers entered, and the
+// average value of the odd integers.
+
+
+#include <stdio.h>
+
+int main(void)
+{
+	int i;
+	float sum_even = 0, sum_odd = 0;      // the total number of two respectively
+	int count_even = 0, count_odd = 0;  // the number of two respectively
+	float average_even, average_odd; // the average value of two respectively
+	
+	printf("Please enter your numbers:\n");
+	scanf("%d", &i);
+	while (i != 0)
+	{
+		if (i % 2 == 0)
+		{
+			sum_even += i;
+			count_even++;
+		}
+		else
+		{
+			sum_odd += i;
+			count_odd++;
+		}
+		scanf("%d", &i);
+	}
+	
+	average_even = sum_even / count_even;
+	average_odd = sum_odd / count_odd;
+	
+	printf("The total number of even integers and odd integers are %f and %f.\n", sum_even, sum_odd);
+	printf("The average values of even integers and odd integers are %f and %f.\n", average_even, average_odd);
+	
+	return 0;
+}
