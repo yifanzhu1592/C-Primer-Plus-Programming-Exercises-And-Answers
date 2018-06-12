@@ -6,7 +6,6 @@
 
 
 #include <stdio.h>
-#include <ctype.h>
 
 int main(void)
 {
@@ -19,7 +18,7 @@ int main(void)
 	
 	while ((ch = getchar()) != '#')
 	{
-		if (isspace(ch) && ch != '\n')
+		if (ch == ' ')
 			ns++;
 		else if (ch == '\n')
 			nnc++;
