@@ -11,13 +11,12 @@
 int main(void)
 {
 	int i;
-	float sum_even = 0, sum_odd = 0;      // the total number of two respectively
+	float sum_even = 0, sum_odd = 0;    // the total number of two respectively
 	int count_even = 0, count_odd = 0;  // the number of two respectively
-	float average_even, average_odd; // the average value of two respectively
+	float average_even, average_odd;    // the average value of two respectively
 	
 	printf("Please enter your numbers:\n");
-	scanf("%d", &i);
-	while (i != 0)
+	while (scanf("%d", &i) == 1 && i != 0)
 	{
 		if (i % 2 == 0)
 		{
@@ -29,14 +28,18 @@ int main(void)
 			sum_odd += i;
 			count_odd++;
 		}
-		scanf("%d", &i);
 	}
 	
 	average_even = sum_even / count_even;
 	average_odd = sum_odd / count_odd;
 	
-	printf("The total number of even integers and odd integers are %f and %f.\n", sum_even, sum_odd);
-	printf("The average values of even integers and odd integers are %f and %f.\n", average_even, average_odd);
+	printf("The number of evens: %d\n", count_even);
+	if (count_even > 0)
+		printf("The average value of evens: %g\n", average_even);
 	
+	printf("The number of odds: %d\n", count_odd);
+	if (count_odd > 0)
+		printf("The average value of odds: %g\n", average_odd);
+			
 	return 0;
 }
