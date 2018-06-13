@@ -27,7 +27,7 @@ int main(void)
 	float hours, time;
 	float gross_pay, taxes, net_pay;
 	
-	printf("How many hours your word in a week?\n");
+	printf("How many hours your work in a week?\n");
 	scanf("%f", &hours);
 	
 	if (hours > basic_time)
