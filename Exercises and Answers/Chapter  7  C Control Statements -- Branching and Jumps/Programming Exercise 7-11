@@ -57,7 +57,7 @@ int main(void)
 					   		printf("Please enter a number:\n");
 					   		while (getchar() != '\n')
 					   			continue;
-					   }
+		               }
 		               pounds_of_artichokes += new_pounds_of_artichokes;
 		               break;
 		           
