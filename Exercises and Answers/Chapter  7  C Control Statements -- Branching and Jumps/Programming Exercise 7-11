@@ -54,9 +54,9 @@ int main(void)
 			case 'a' : printf("How many pounds of artichokes do you want to add?\n");
 		               while (scanf("%f", &new_pounds_of_artichokes) != 1)
 		               {
-					   		printf("Please enter a number:\n");
-					   		while (getchar() != '\n')
-					   			continue;
+		                	printf("Please enter a number:\n");
+		                	while (getchar() != '\n')
+		                		continue;
 		               }
 		               pounds_of_artichokes += new_pounds_of_artichokes;
 		               break;
