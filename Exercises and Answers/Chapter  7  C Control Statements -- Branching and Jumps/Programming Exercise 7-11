@@ -37,48 +37,57 @@ int main(void)
 	float total_charges, discount = 0, shipping_charges, grand_total;
 	float cost_for_artichokes, cost_for_beets, cost_for_carrots;
 	
-	a:
 	printf("Please order:\n");
 	printf("a. artichokes\n");
 	printf("b. beets\n");
 	printf("c. carrots\n");
 	printf("q. Finished!\n");
 	
-	choice = getchar();
-	while (getchar() != '\n')
-		continue;
-	
-	while (choice != 'a' && choice != 'b' && choice != 'c' && choice != 'q')
+	while ((choice = getchar()) != 'q')
 	{
-		printf("Please enter 'a' or 'b' or 'c' or 'q':\n");
-		choice = getchar();
+		if (choice == '\n')
+			continue;
 		while (getchar() != '\n')
 			continue;
-	}
-	switch (choice)
-	{
-		case 'a' : printf("How many pounds of artichokes do you want to add?\n");
-		           scanf("%f", &new_pounds_of_artichokes);
-		           getchar();
-		           pounds_of_artichokes += new_pounds_of_artichokes;
-		           goto a;
+		switch (choice)
+		{
+			case 'a' : printf("How many pounds of artichokes do you want to add?\n");
+		               while (scanf("%f", &new_pounds_of_artichokes) != 1)
+		               {
+					   		printf("Please enter a number:\n");
+					   		while (getchar() != '\n')
+					   			continue;
+					   }
+		               pounds_of_artichokes += new_pounds_of_artichokes;
+		               break;
 		           
-		case 'b' : printf("How many pounds of beets do you want to add?\n");
-		           scanf("%f", &new_pounds_of_beets);
-		           getchar();
-		           pounds_of_beets += new_pounds_of_beets;
-		           goto a;
+			case 'b' : printf("How many pounds of beets do you want to add?\n");
+		               while (scanf("%f", &new_pounds_of_beets) != 1)
+		               {
+		               		printf("Please enter a number:\n");
+		               		while (getchar() != '\n')
+		               			continue;
+		               }
+		               pounds_of_beets += new_pounds_of_beets;
+		               break;
 		
-		case 'c' : printf("How many pounds of carrots do you want to add?\n");
-		           scanf("%f", &new_pounds_of_carrots);
-		           getchar();
-		           pounds_of_carrots += new_pounds_of_carrots;
-		           goto a;
+			case 'c' : printf("How many pounds of carrots do you want to add?\n");
+		               while (scanf("%f", &new_pounds_of_carrots) != 1)
+		               {
+		               		printf("Please enter a number:\n");
+		               		while (getchar() != '\n')
+		               			continue;
+		               }
+		               pounds_of_carrots += new_pounds_of_carrots;
+		               break;
 		
-		case 'q' : break;
-		
-		default  : break;
-		           
+			default  : printf("Please enter 'a' or 'b' or 'c' or 'q':\n");
+		}
+		printf("Please order:\n");
+		printf("a. artichokes\n");
+		printf("b. beets\n");
+		printf("c. carrots\n");
+		printf("q. Finished!\n");
 	}
 	
 	cost_for_artichokes = artichoke_per_pound * pounds_of_artichokes;
@@ -102,11 +111,11 @@ int main(void)
 	
 	grand_total = total_charges - discount + shipping_charges;
 	
-	printf("The price of artichoke is $%g per pound, and you ordered %g pounds, so it's $%g pounds for artichokes.\n",
+	printf("The price of artichoke is $%g per pound, and you ordered %g pounds,\nso it's $%g pounds for artichokes.\n",
 			artichoke_per_pound, pounds_of_artichokes, cost_for_artichokes);
-	printf("The price of beet is $%g per pound, and you ordered %g pounds, so it's $%g pounds for beets.\n",
+	printf("The price of beet is $%g per pound, and you ordered %g pounds,\nso it's $%g pounds for beets.\n",
 			beet_per_pound, pounds_of_beets, cost_for_beets);
-	printf("The price of carrot is $%g per pound, and you ordered %g pounds, so it's $%g pounds for carrots.\n",
+	printf("The price of carrot is $%g per pound, and you ordered %g pounds,\nso it's $%g pounds for carrots.\n",
 			carrot_per_pound, pounds_of_carrots, cost_for_carrots);
 	printf("The total cost of the order is $%g.\n", total_charges);
 	printf("The discount is $%g.\n", discount);
