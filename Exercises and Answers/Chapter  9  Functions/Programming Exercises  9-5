@@ -32,4 +32,4 @@ void larger_of(double * i, double * j)
 		*j = *i;
 	else
 		*i = *j;
-}
+} 
